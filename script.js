@@ -21,7 +21,7 @@ const API_KEY = "a192158e7d9d453cb5912522240206";
 
 //A funtion which is used for fetch the weather data from API
 let fetchWeatherData = async (locationName) => {
-    let response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${process.env.API_KEY}&q=${locationName}&aqi=no`);
+    let response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${locationName}&aqi=no`);
     let data  = await response.json();
     updateUI(data);
 }
