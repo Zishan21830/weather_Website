@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Website</title>
+    <!-- style sheet link -->
+    <link rel="stylesheet" href="./style.css" />
+    <!-- font awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="center">
+    <div id="container" class="">
+      <header id="header" class="d-flex center">
+        <input type="text" placeholder="Location" id="input_field"/><i
+          class="fa-solid fa-magnifying-glass" id="search_btn"
+        ></i>
+      </header>
+      <main>
+        <div class="temp_info d-flex">
+          <div class="temp">
+            <!-- shows the main temparature -->
+            <h1><span id="main_temp"></span>&deg;C</h1>
+            <h3><i class="fa-solid fa-location-dot" style="margin-right: 0.7rem;"></i><span id="location"></span></h3>
+            <p><span id="weather"></span></p>
+          </div>
+          <div id="icon" class="center">
+            <img src="" alt="weather_image" id="img">
+          </div>
+        </div>
+        <div class="weather_info center">
+          <!-- shows the some more information about the weather like humidity, visibility, oricioitation, and feels like -->
+          <div class="info">
+            <i class="fa-solid fa-temperature-half"></i
+            ><strong>Feels Like</strong>
+            <h3 ><span id="feels_like"></span>&deg;C</h3>
+          </div>
+          <div class="info">
+            <i class="fa-solid fa-droplet"></i><strong>Pricipitation</strong>
+            <h3><span id="pricipitation"></span>"</h3>
+          </div>
+          <div class="info">
+            <i class="fa-solid fa-percent"></i><strong>Humidity</strong>
+            <h3><span id="humidity"></span>%</h3>
+          </div>
+          <div class="info">
+            <i class="fa-regular fa-eye"></i><strong>visibilty</strong>
+            <h3><span id="visibility"></span>m</h3>
+          </div>
+        </div>
+      </main>
+    </div>
+    <!-- JS file link -->
+    <script src="./script.js"></script>
+  </body>
+</html>

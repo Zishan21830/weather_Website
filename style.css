@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;padding: 0;box-sizing: border-box;
+}
+:root{
+    --light-black: #1e2229;
+    --dark-gray: #34333d;
+    --light-gray: #566473;
+    --white: #fefefe;
+}
+body{
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+    background-color: var(--light-black);
+}
+.d-flex{
+    display: flex;
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-d{
+    flex-direction: column;
+}
+/* container */
+#container{
+    min-height: 90vh;
+    width: 30vw;
+    padding: 1rem;
+    margin: 1rem 0;
+    background-color: var(--white);
+    border-radius: 0.7rem;
+}
+header{
+    height: 6vh;
+    background-color: var(--light-gray);
+    gap: 1.6em;
+    border-radius: 1.5rem;
+    padding-right: 0.7rem;
+}
+input{
+    width: 91%;
+    height: 100%;
+    background-color: transparent;
+    border-radius: 1.5rem;
+    border: none;
+    outline: none;
+    padding-left: 1rem;
+    font-size: 1.2rem;
+    transition: 0.5s;
+}
+input::placeholder{
+    color: var(--white);
+    font-size: 1.1rem;
+}
+header i{
+    color: var(--white);
+    cursor: pointer;
+}
+main .temp_info{
+    height: 28vh;
+}
+.temp{
+    width: 50%;
+    height: 100%;
+}
+.temp h1{
+    font-size: 4em;
+}
+.temp h3{
+    margin-top: -1rem;
+    font-size: 1.5em;
+}
+.temp_info p{
+    font-size: 1.5em;
+    font-weight: 600;
+}
+.icon{
+    border: 0.1rem solid black;
+    width: 50%;
+    height: 100%;
+}
+.weather_info{
+    min-height: 40vh;
+    width: 100%;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+.info{
+    width: 12em;
+    height: 10em;
+    border: 0.1rem solid var(--dark-gray);
+    padding: 1rem 0 0 1rem;
+    background-color: var(--dark-gray);
+    border-radius: 0.7rem;
+    color: var(--white);
+}
+.info strong{
+    font-size: 1.3em;
+    font-weight: 400;
+    margin-left: 0.5rem;
+}
+.info h3{
+    font-weight: 500;
+    font-size: 3em;
+}
+@media (min-width :522px)  {
+    #container{
+        width: 90vw;
+    }
+    .temp_info{
+        justify-content: space-evenly;
+        gap: 10em;
+    }
+    .info{
+        width: 45%;
+        height: 10em;
+    }
+}
+@media (max-width: 520px) {
+    #container{
+        width: 90vw;
+    }
+    .weather_info {
+        gap: 1rem;
+    }
+    .temp_info{
+        justify-content: space-between;
+    }
+    .info{
+        width: 100%;
+        height: 8em;
+    }
+}
