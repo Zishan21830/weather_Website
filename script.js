@@ -4,10 +4,9 @@ const btn = document.getElementById("search_btn");
 const temp = document.getElementById("main_temp");
 const areaLoaction = document.getElementById("location");
 const weather = document.getElementById("weather");
-const img = document.getElementById("img");
 const feelLikes = document.getElementById("feels_like");
-const visibility = document.getElementById("visibility");
-const pricipitation = document.getElementById("pricipitation");
+const clouds = document.getElementById("clouds");
+const windSpeed = document.getElementById("wind_speed");
 const humidity = document.getElementById("humidity");
 let locationName = "Noida";
 /**
@@ -17,25 +16,25 @@ let locationName = "Noida";
  * 2 - weather api (link - https://www.weatherapi.com/)
  * 3 - visual crossing (link - https://www.visualcrossing.com/weather-api)
  */
-const API_KEY = "a192158e7d9d453cb5912522240206";
+const API_KEY = "88f9dde9cb7ac25fa558d6e8c7e1fb2e";
 
 //A funtion which is used for fetch the weather data from API
 let fetchWeatherData = async (locationName) => {
-    let response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${locationName}&aqi=no`);
+    let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${locationName}&appid=${API_KEY}`);
     let data  = await response.json();
+    console.log(data);
     updateUI(data);
 }
 
 // update date in user interface
 let updateUI = (data) => {
-    temp.innerHTML = data.current.feelslike_c;
-    areaLoaction.innerHTML = data.location.name;
-    weather.innerHTML = data.current.condition.text;
-    img.src = data.current.condition.icon;
-    feelLikes.innerHTML = data.current.feelslike_c;
-    pricipitation.innerText = data.current.precip_in;
-    humidity.innerHTML = data.current.humidity;
-    visibility.innerHTML = data.current.vis_km;
+    temp.innerHTML = parseFloat((data.main.feels_like - 273.15).toFixed(2));
+    areaLoaction.innerHTML = data.name;
+    weather.innerHTML = data.weather[0].main;
+    feelLikes.innerHTML = parseFloat((data.main.feels_like - 273.15).toFixed(2));
+    windSpeed.innerText = data.wind.speed;
+    humidity.innerHTML = data.main.humidity;
+    clouds.innerHTML = data.clouds.all;
 }
 
 //call the `fetchWeatherData` for initial UI data
