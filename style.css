@@ -36,12 +36,12 @@ body{
 header{
     height: 6vh;
     background-color: var(--light-gray);
-    gap: 1.6em;
+    gap: 1.4em;
     border-radius: 1.5rem;
-    padding-right: 0.7rem;
+    padding-right: 0.9rem;
 }
 input{
-    width: 91%;
+    width: 100%;
     height: 100%;
     background-color: transparent;
     border-radius: 1.5rem;
@@ -56,6 +56,7 @@ input::placeholder{
     font-size: 1.1rem;
 }
 header i{
+    font-size: 1.3em;
     color: var(--white);
     cursor: pointer;
 }
